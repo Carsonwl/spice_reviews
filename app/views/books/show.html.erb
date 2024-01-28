@@ -1,0 +1,23 @@
+<%= stylesheet_link_tag 'custom.css' %>
+<h1>Book Details</h1>
+
+ <table class="book_list">
+  <tr>
+    <th>Cover</th>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Length</th>
+  </tr>
+  <tbody>
+    <tr>   
+        <td class="cover_table"><img class="book_cover" src= <%= @book.cover %>></td>
+        <td><%= @book.title %></td>
+        <td><%= @book.author %></td>
+        <td><%= @book.pages %></td>
+    </tr>
+  </tbody>
+</table> 
+<button class="trailing_button"> <%= link_to "Home", books_path %> </button>
+
+
+

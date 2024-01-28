@@ -1,8 +1,25 @@
-<h1>Books#index</h1>
-<ul>
-    <% @books.each do |book| %>
-        <li>
-            <%= book.title %>
-        </li>
-    <% end %>
-</ul>
+<%= stylesheet_link_tag 'custom.css' %>
+<h1>All Books</h1>
+
+ <table class="book_list">
+  <tr>
+    <th>Cover</th>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Length</th>
+    <th>Actions</th>
+  </tr>
+  <tbody>
+  <% @books.each do |book| %>
+    <tr>
+        <td class="cover_table"><img class="book_cover" src= <%= book.cover %>></td> 
+        <td><%= book.title %></td>
+        <td><%= book.author %></td>
+        <td><%= book.pages %></td>
+        <td><%= link_to "details", book %>
+    </tr>
+  <% end %>
+  </tbody>
+</table> 
+
+<button class="trailing_button"> <%= link_to "New Book", new_book_path %> </button>
