@@ -17,6 +17,12 @@
     </tr>
   </tbody>
 </table> 
+<button class="trailing_button delete_button"> <%= link_to "Destroy", book_path(@book), 
+data: {
+    turbo_method: :delete,
+    turbo_confirm: "Are you sure?"
+} 
+%> </button>
 <button class="trailing_button"> <%= link_to "Home", books_path %> </button>
 
 

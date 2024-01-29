@@ -1,6 +1,7 @@
 table {
 	border-collapse: collapse;
     font-family: Tahoma, Geneva, sans-serif;
+    width:90%;
 }
 table td {
 	padding: 15px;
@@ -34,4 +35,10 @@ table tbody tr:nth-child(odd) {
 
 .cover_table {
     text-align:center;
+}
+
+.delete_button {
+    background-color:red;
+    color:white;
+    padding:5px;
 }
