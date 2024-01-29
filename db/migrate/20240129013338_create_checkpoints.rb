@@ -1,7 +1,7 @@
 class CreateCheckpoints < ActiveRecord::Migration[7.1]
   def change
     create_table :checkpoints do |t|
-      t.integer :book_id
+      t.references :book_id, null: false, foreign_key: true
       t.integer :page
       t.integer :setting
       t.integer :plot
