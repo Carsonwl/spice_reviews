@@ -1,3 +1,3 @@
 class Checkpoint < ApplicationRecord
-  belongs_to :book_id
+  belongs_to :book
 end

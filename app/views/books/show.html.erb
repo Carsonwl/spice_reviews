@@ -17,6 +17,43 @@
     </tr>
   </tbody>
 </table> 
+
+<h2>Checkpoints</h2>
+<% @book.checkpoints.each do |ch| %>
+    <%= ch.page %>: <%= ch.setting %><%= ch.plot %><%= ch.investment %><%= ch.character %><%= ch.enjoyment %><br>
+<% end %>
+
+ <h2>Add a checkpoint:</h2>
+<%= form_with model: [@book, @book.checkpoints.build] do |form| %>
+  <p>
+    <%= form.label :page %><br>
+    <%= form.text_field :page %>
+  </p>
+  <p>
+    <%= form.label :setting %><br>
+    <%= form.number_field :setting %>
+  </p>
+  <p>
+    <%= form.label :plot %><br>
+    <%= form.number_field :plot %>
+  </p>
+  <p>
+    <%= form.label :investment %><br>
+    <%= form.number_field :investment %>
+  </p>
+  <p>
+    <%= form.label :character %><br>
+    <%= form.number_field :character %>
+  </p>
+  <p>
+    <%= form.label :enjoyment %><br>
+    <%= form.number_field :enjoyment %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %> 
+
 <button class="trailing_button delete_button"> <%= link_to "Destroy", book_path(@book), 
 data: {
     turbo_method: :delete,

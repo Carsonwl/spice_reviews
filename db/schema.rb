@@ -21,7 +21,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_29_013338) do
   end
 
   create_table "checkpoints", force: :cascade do |t|
-    t.integer "book_id_id", null: false
+    t.integer "book_id", null: false
     t.integer "page"
     t.integer "setting"
     t.integer "plot"
@@ -30,8 +30,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_29_013338) do
     t.integer "enjoyment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["book_id_id"], name: "index_checkpoints_on_book_id_id"
+    t.index ["book_id"], name: "index_checkpoints_on_book_id"
   end
 
-  add_foreign_key "checkpoints", "book_ids"
+  add_foreign_key "checkpoints", "books"
 end
