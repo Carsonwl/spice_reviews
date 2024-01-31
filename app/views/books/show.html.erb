@@ -18,8 +18,8 @@
   </tbody>
 </table> 
 
-<%= line_chart @book.checkpoints.map { |ch|
-    {name: ch.page, data: ch}
+<%= column_chart @book.checkpoints.map { |ch|
+    {name: ch.page, data: {"setting" => ch.setting, "plot" => ch.plot, "investment" => ch.investment, "character" => ch.character, "enjoyment" => ch.enjoyment}}
 } %>
 
 <h2>Checkpoints</h2>
