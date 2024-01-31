@@ -22,4 +22,6 @@
   </tbody>
 </table> 
 
+<%= column_chart @books.group(:author).count %>
+
 <button class="trailing_button"> <%= link_to "New Book", new_book_path %> </button>

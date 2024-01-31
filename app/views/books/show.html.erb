@@ -18,8 +18,12 @@
   </tbody>
 </table> 
 
+<%= line_chart @book.checkpoints.map { |ch|
+    {name: ch.page, data: ch}
+} %>
+
 <h2>Checkpoints</h2>
-<% @book.checkpoints.each do |ch| %>
+<% @book.checkpoints.order(:page).each do |ch| %>
     <%= ch.page %>: <%= ch.setting %><%= ch.plot %><%= ch.investment %><%= ch.character %><%= ch.enjoyment %><br>
 <% end %>
 
